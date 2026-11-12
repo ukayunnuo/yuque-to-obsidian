@@ -1,0 +1,35 @@
+{
+  "skill_name": "yuque-to-obsidian",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我之前一直用语雀记技术笔记，最近装了 Obsidian，库放在 <用户给的路径>。想把语雀里某个知识库同步过来，以后在语雀里改完这边能跟上",
+      "expected_output": "先问 vault 路径/凭据：取 cookie -> --list-books 枚举让用户点名 -> 写 yuque-sync.config.json -> sync.mjs -> check.mjs 报断裂数 -> 说明单向镜像。不得使用任何示例或猜测的路径、账号 slug",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "语雀那个知识库能每天自动同步到我 Obsidian 吗？我基本只在语雀里写，Obsidian 只用来查",
+      "expected_output": "搭建同步 + 询问每天几点 + 注册计划任务 + 回读 schtasks 验证路径 + 说明 cookie 过期与单向镜像",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "我导出的语雀笔记文件名后面都带一串随机字符，图片也全是裂的，帮我整理进 Obsidian",
+      "expected_output": "识别为已有 yuque-dl 产物的清洗场景：把 staging 指到产物目录 + --publish-only，去后缀 + 重名编号 + 按笔记所在目录修图片链接，而不是整库重下",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "我的知识库是公开的，不想给 cookie，也不想让人看见我的笔记私密内容，能同步吗？",
+      "expected_output": "说明公开库可免 cookie，但必须跳过 --list-books（该接口列的是\"我的库\"，无登录态必然失败），直接让用户给知识库 URL 写进 repos；带密码的公开库用 password 字段；同时提示无 cookie 时拿不到 book_id、补图会失效，图片只能靠 yuque-dl 自身",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "这技能里有没有我需要填的东西？",
+      "expected_output": "指出 SKILL.md 的收集清单：vault 路径、要同步的库、凭据、目录名、时间；并说明技能本身不含任何人的配置",
+      "files": []
+    }
+  ]
+}

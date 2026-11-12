@@ -1,0 +1,13 @@
+# 本地配置与日志：等价于语雀登录态，绝不要提交
+yuque-sync.config.json
+**/.yuque-sync/
+sync.log
+sync.out.log
+
+# yuque-dl 的原始下载缓存
+staging/
+
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
